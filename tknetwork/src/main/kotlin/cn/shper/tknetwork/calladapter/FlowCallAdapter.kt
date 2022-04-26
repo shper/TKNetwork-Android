@@ -16,7 +16,7 @@ import kotlin.coroutines.resumeWithException
  * Email: me@shper.cn
  * Version: V0.1 2022/4/18
  */
-class TKFlowCallAdapter<T>(private val responseType: Type) : CallAdapter<T, Flow<T>> {
+class FlowCallAdapter<T>(private val responseType: Type) : CallAdapter<T, Flow<T>> {
 
     override fun responseType(): Type {
         return responseType

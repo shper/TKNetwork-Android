@@ -10,7 +10,7 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:text="TKResponse Example"
+        android:text="Result suspend Example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +19,7 @@
         android:id="@+id/example_deferred_btn"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="Coroutines Deferred Example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,11 +29,21 @@
         android:id="@+id/example_flow_btn"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="Coroutines Flow Example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/example_deferred_btn" />
+
+    <cn.shper.tkui.TKButton
+        android:id="@+id/example_download_btn"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Download Example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/example_flow_btn" />
 
     <TextView
         android:id="@+id/example_txt"
@@ -45,6 +55,6 @@
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/example_flow_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/example_download_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

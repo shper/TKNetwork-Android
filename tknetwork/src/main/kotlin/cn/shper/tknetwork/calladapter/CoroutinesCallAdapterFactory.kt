@@ -11,12 +11,12 @@ import java.lang.reflect.Type
  * Email: me@shper.cn
  * Version: V0.1 2022/4/18
  */
-class TKCoroutinesCallAdapterFactory : CallAdapter.Factory() {
+class CoroutinesCallAdapterFactory : CallAdapter.Factory() {
 
     companion object {
         @JvmStatic
-        fun create(): TKCoroutinesCallAdapterFactory {
-            return TKCoroutinesCallAdapterFactory()
+        fun create(): CoroutinesCallAdapterFactory {
+            return CoroutinesCallAdapterFactory()
         }
     }
 
@@ -33,6 +33,6 @@ class TKCoroutinesCallAdapterFactory : CallAdapter.Factory() {
         }
 
         val responseType = getParameterUpperBound(0, returnType)
-        return TKCoroutinesCallAdapter<Any>(responseType)
+        return CoroutinesCallAdapter<Any>(responseType)
     }
 }

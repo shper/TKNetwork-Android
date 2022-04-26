@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
  * Email: me@shper.cn
  * Version: V0.1 2022/4/25
  */
-class TimeoutInterceptor : Interceptor {
+internal class TimeoutInterceptor : Interceptor {
 
     companion object {
         @JvmStatic

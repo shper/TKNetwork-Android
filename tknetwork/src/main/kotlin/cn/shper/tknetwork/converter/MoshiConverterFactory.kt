@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  * Email: me@shper.cn
  * Version: V0.1 2022/4/18
  */
-class TKMoshiConverterFactory {
+class MoshiConverterFactory {
 
     companion object {
         @JvmStatic

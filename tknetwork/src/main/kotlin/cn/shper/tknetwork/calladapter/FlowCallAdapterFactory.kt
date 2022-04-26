@@ -11,12 +11,12 @@ import java.lang.reflect.Type
  * Email: me@shper.cn
  * Version: V0.1 2022/4/18
  */
-class TKFlowCallAdapterFactory private constructor() : CallAdapter.Factory() {
+class FlowCallAdapterFactory private constructor() : CallAdapter.Factory() {
 
     companion object {
         @JvmStatic
-        fun create(): TKFlowCallAdapterFactory {
-            return TKFlowCallAdapterFactory()
+        fun create(): FlowCallAdapterFactory {
+            return FlowCallAdapterFactory()
         }
     }
 
@@ -31,6 +31,6 @@ class TKFlowCallAdapterFactory private constructor() : CallAdapter.Factory() {
         check(returnType is ParameterizedType) { "Flow return type must be parameterized as Flow<Foo> or Flow<out Foo>" }
 
         val responseType = getParameterUpperBound(0, returnType)
-        return TKFlowCallAdapter<Any>(responseType)
+        return FlowCallAdapter<Any>(responseType)
     }
 }

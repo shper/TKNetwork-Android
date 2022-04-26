@@ -1,6 +1,6 @@
 package cn.shper.tknetwork.interceptor
 
-import cn.shper.tknetwork.TKRetrofitClient
+import cn.shper.tknetwork.TKNetworkClient
 import cn.shper.tknetwork.annotation.Domain
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
@@ -12,7 +12,7 @@ import retrofit2.Invocation
  * Email: me@shper.cn
  * Version: V0.1 2022/4/25
  */
-class DomainInterceptor : Interceptor {
+internal class DomainInterceptor : Interceptor {
 
     companion object {
         @JvmStatic
@@ -29,7 +29,7 @@ class DomainInterceptor : Interceptor {
 
         domainAnnotation?.let { domain ->
 
-            TKRetrofitClient.getDomainUrlByName(domain.name)?.let { url ->
+            TKNetworkClient.getDomainUrlByName(domain.name)?.let { url ->
 
                 HttpUrl.parse(url)?.let { httpUrl ->
 

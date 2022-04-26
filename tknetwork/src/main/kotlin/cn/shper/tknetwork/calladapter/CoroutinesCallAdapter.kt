@@ -10,7 +10,7 @@ import java.lang.reflect.Type
  * Email: me@shper.cn
  * Version: V0.1 2022/4/18
  */
-class TKCoroutinesCallAdapter<T>(private val responseType: Type) : CallAdapter<T, Deferred<T>> {
+class CoroutinesCallAdapter<T>(private val responseType: Type) : CallAdapter<T, Deferred<T>> {
 
     override fun responseType(): Type {
         return responseType

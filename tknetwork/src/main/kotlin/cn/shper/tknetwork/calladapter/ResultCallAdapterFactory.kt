@@ -11,12 +11,12 @@ import java.lang.reflect.Type
  * Email: me@shper.cn
  * Version: V0.1 2022/4/25
  */
-class TKResultCallAdapterFactory private constructor() : CallAdapter.Factory() {
+class ResultCallAdapterFactory private constructor() : CallAdapter.Factory() {
 
     companion object {
         @JvmStatic
-        fun create(): TKResultCallAdapterFactory {
-            return TKResultCallAdapterFactory()
+        fun create(): ResultCallAdapterFactory {
+            return ResultCallAdapterFactory()
         }
     }
 
@@ -32,12 +32,16 @@ class TKResultCallAdapterFactory private constructor() : CallAdapter.Factory() {
         check(returnType is ParameterizedType) { "Result return type must be parameterized as Result<Foo> or Result<out Foo>" }
 
         val responseType = getParameterUpperBound(0, returnType)
+        if (Result::class.java != getRawType(responseType)) {
+            return null
+        }
+
         return object : CallAdapter<Any, Call<Result<Any>>> {
             override fun responseType(): Type {
                 return getParameterUpperBound(0, responseType as ParameterizedType)
             }
 
-            override fun adapt(call: Call<Any>): Call<Result<Any>> = TKResultCall(call)
+            override fun adapt(call: Call<Any>): Call<Result<Any>> = ResultCall(call)
 
         }
     }

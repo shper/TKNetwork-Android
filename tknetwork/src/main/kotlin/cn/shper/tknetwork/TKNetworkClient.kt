@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
  * Email: me@shper.cn
  * Version: V0.1 2022/4/15
  */
-object TKRetrofitClient {
+object TKNetworkClient {
 
     private lateinit var baseurl: String
     private var domainMap: MutableMap<String, String>? = null
@@ -50,19 +50,19 @@ object TKRetrofitClient {
         builder.build()
     }
 
-    fun setup(baseurl: String): TKRetrofitClient {
+    fun setup(baseurl: String): TKNetworkClient {
         this.baseurl = baseurl
 
         return this
     }
 
-    fun client(httpClient: OkHttpClient): TKRetrofitClient {
+    fun client(httpClient: OkHttpClient): TKNetworkClient {
         this.httpClient = httpClient
 
         return this
     }
 
-    fun addDomain(name: String, url: String): TKRetrofitClient {
+    fun addDomain(name: String, url: String): TKNetworkClient {
         if (domainMap == null) {
             domainMap = mutableMapOf()
         }
@@ -78,7 +78,7 @@ object TKRetrofitClient {
         }
     }
 
-    fun addConverterFactory(converterFactory: Converter.Factory): TKRetrofitClient {
+    fun addConverterFactory(converterFactory: Converter.Factory): TKNetworkClient {
         if (converterFactoryList == null) {
             converterFactoryList = mutableListOf()
         }
@@ -87,7 +87,7 @@ object TKRetrofitClient {
         return this
     }
 
-    fun addCallAdapterFactory(callAdapterFactory: CallAdapter.Factory): TKRetrofitClient {
+    fun addCallAdapterFactory(callAdapterFactory: CallAdapter.Factory): TKNetworkClient {
         if (callAdapterFactoryList == null) {
             callAdapterFactoryList = mutableListOf()
         }
